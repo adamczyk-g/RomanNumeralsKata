@@ -14,10 +14,12 @@ namespace RomanNumeralsKata
         public void RomanNumeralsConverterTest()
         {
             Assert.AreEqual(1,RomanNumeralsConverter("I"));
+            Assert.AreEqual(0, RomanNumeralsConverter(""));
         }
 
         private double RomanNumeralsConverter(string romanNumeral)
         {
+            if (romanNumeral == "") return 0;
             return 1;
         }
     }
