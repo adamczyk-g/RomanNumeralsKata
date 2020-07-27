@@ -10,17 +10,17 @@ namespace RomanNumeralsKata
     [TestFixture]
     public class RomanNumeralsTests
     {
-        [Test]
-        public void RomanNumeralsConverterTest()
+        [TestCase("",0)]
+        [TestCase("I", 1)]
+        [TestCase("II", 2)]
+        [TestCase("III", 3)]
+        public void RomanNumeralsConverterTest(string expected, int arabicNumber)
         {
-            Assert.AreEqual(0, RomanNumeralsConverter(""));
-            Assert.AreEqual(1,RomanNumeralsConverter("I"));
-            Assert.AreEqual(2, RomanNumeralsConverter("II"));
-            Assert.AreEqual(3, RomanNumeralsConverter("III"));
+            Assert.AreEqual(arabicNumber, RomanNumeralsConverter(""));
         }
 
         private double RomanNumeralsConverter(string romanNumeral)
-        {            
+        {   
             if (romanNumeral == "I") return 1;
             if (romanNumeral == "II") return 2;
             if (romanNumeral == "III") return 3;
