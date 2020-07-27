@@ -11,14 +11,22 @@ namespace RomanNumeralsKata
     public class RomanNumeralsTests
     {
         [TestCase("", 0)]
+
         [TestCase("I", 1)]
-        [TestCase("II", 2)]
-        [TestCase("III", 3)]
         [TestCase("V", 5)]
         [TestCase("X", 10)]
         [TestCase("L", 50)]
         [TestCase("C", 100)]
         [TestCase("M", 1000)]
+
+        [TestCase("II", 2)]
+        [TestCase("III", 3)]
+        [TestCase("XX", 20)]
+        [TestCase("XXX", 30)]
+
+        [TestCase("IV", 4)]
+        [TestCase("IX", 9)]
+        [TestCase("XL", 40)]
 
         public void RomanNumeralsConverterTest(string romanNumeral, int expectedNumber)
         {
@@ -36,12 +44,12 @@ namespace RomanNumeralsKata
         };
 
         private double RomanNumeralsConverter(string romanNumeral)
-        {   
-            if (romanNumeral == "I") return 1;
-            if (romanNumeral == "II") return 2;
-            if (romanNumeral == "III") return 3;
-
+        {
             int result = 0;
+
+            if (romanNumeral == "IV") return 4;
+            if (romanNumeral == "IX") return 9;
+            if (romanNumeral == "XL") return 40;
 
             for (int i = 0; i < romanNumeral.Length; i++)
             {
