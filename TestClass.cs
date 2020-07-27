@@ -4,6 +4,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using NUnit.Framework;
+using RomanNumeralsKata.src;
 
 namespace RomanNumeralsKata
 {
@@ -40,33 +41,8 @@ namespace RomanNumeralsKata
 
         public void RomanNumeralsConverterTest(string romanNumeral, int expectedNumber)
         {
-            Assert.AreEqual(expectedNumber, RomanNumeralsConverter(romanNumeral));
-        }
-
-        Dictionary<char, int> romanNumeralsDictionary = new Dictionary<char, int>()
-        {
-            {'I',1 },
-            {'V',5 },
-            {'X',10 },
-            {'L',50 },
-            {'C',100},
-            {'D',500},
-            {'M',1000},
-        };
-
-        private double RomanNumeralsConverter(string romanNumeral)
-        {
-            int result = 0;
-
-            for (int i = 0; i < romanNumeral.Length; i++)
-            {
-                if (i+1 < romanNumeral.Length && romanNumeralsDictionary[romanNumeral[i+1]] > romanNumeralsDictionary[romanNumeral[i]])
-                    result -= romanNumeralsDictionary[romanNumeral[i]];
-                else
-                    result += romanNumeralsDictionary[romanNumeral[i]];
-            }
-
-            return result;
-        }
+            Assert.AreEqual(expectedNumber, new RomanNumerals().ConvertToArabic(romanNumeral));
+        }        
+        
     }
 }
