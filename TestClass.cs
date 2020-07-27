@@ -13,14 +13,18 @@ namespace RomanNumeralsKata
         [Test]
         public void RomanNumeralsConverterTest()
         {
-            Assert.AreEqual(1,RomanNumeralsConverter("I"));
             Assert.AreEqual(0, RomanNumeralsConverter(""));
+            Assert.AreEqual(1,RomanNumeralsConverter("I"));
+            Assert.AreEqual(2, RomanNumeralsConverter("II"));
+            Assert.AreEqual(3, RomanNumeralsConverter("III"));
         }
 
         private double RomanNumeralsConverter(string romanNumeral)
-        {
-            if (romanNumeral == "") return 0;
-            return 1;
+        {            
+            if (romanNumeral == "I") return 1;
+            if (romanNumeral == "II") return 2;
+            if (romanNumeral == "III") return 3;
+            return 0;
         }
     }
 }
