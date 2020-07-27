@@ -39,9 +39,9 @@ namespace RomanNumeralsKata.src
             return romanDictionary[roman[i + 1]] > romanDictionary[roman[i]];
         }
 
-        private bool IsNotLastNumeral(string romanNumeral, int i)
+        private bool IsNotLastNumeral(string roman, int i)
         {
-            return i + 1 < romanNumeral.Length;
+            return i + 1 < roman.Length;
         }
     }
 }
