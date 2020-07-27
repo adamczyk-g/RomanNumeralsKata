@@ -27,6 +27,7 @@ namespace RomanNumeralsKata
         [TestCase("IV", 4)]
         [TestCase("IX", 9)]
         [TestCase("XL", 40)]
+        [TestCase("XIV", 14)]
 
         public void RomanNumeralsConverterTest(string romanNumeral, int expectedNumber)
         {
@@ -47,12 +48,12 @@ namespace RomanNumeralsKata
         {
             int result = 0;
 
-            if (romanNumeral.Length == 2 && romanNumeralsDictionary[romanNumeral[1]] > romanNumeralsDictionary[romanNumeral[0]])
-                return romanNumeralsDictionary[romanNumeral[1]] - romanNumeralsDictionary[romanNumeral[0]];
-
             for (int i = 0; i < romanNumeral.Length; i++)
             {
-                result += romanNumeralsDictionary[romanNumeral[i]];
+                if (i+1 < romanNumeral.Length && romanNumeralsDictionary[romanNumeral[i+1]] > romanNumeralsDictionary[romanNumeral[i]])
+                    result -= romanNumeralsDictionary[romanNumeral[i]];
+                else
+                    result += romanNumeralsDictionary[romanNumeral[i]];
             }
 
             return result;
