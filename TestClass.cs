@@ -17,6 +17,7 @@ namespace RomanNumeralsKata
         [TestCase("X", 10)]
         [TestCase("L", 50)]
         [TestCase("C", 100)]
+        [TestCase("D", 500)]
         [TestCase("M", 1000)]
 
         [TestCase("II", 2)]
@@ -28,6 +29,14 @@ namespace RomanNumeralsKata
         [TestCase("IX", 9)]
         [TestCase("XL", 40)]
         [TestCase("XIV", 14)]
+        [TestCase("XIX", 19)]
+        [TestCase("MCM", 1900)]
+
+        [TestCase("MCMXXXIX", 1939)]
+        [TestCase("MMXX", 2020)]
+        [TestCase("MCDX", 1410)]
+        [TestCase("MCDXCIX", 1499)]
+        [TestCase("MCMLXXXIX", 1989)]
 
         public void RomanNumeralsConverterTest(string romanNumeral, int expectedNumber)
         {
@@ -41,6 +50,7 @@ namespace RomanNumeralsKata
             {'X',10 },
             {'L',50 },
             {'C',100},
+            {'D',500},
             {'M',1000},
         };
 
