@@ -10,7 +10,7 @@ namespace RomanNumeralsKata
     [TestFixture]
     public class RomanNumeralsTests
     {
-        [TestCase("",0)]
+        [TestCase("", 0)]
         [TestCase("I", 1)]
         [TestCase("II", 2)]
         [TestCase("III", 3)]
@@ -25,18 +25,30 @@ namespace RomanNumeralsKata
             Assert.AreEqual(expectedNumber, RomanNumeralsConverter(romanNumeral));
         }
 
+        Dictionary<char, int> romanNumeralsDictionary = new Dictionary<char, int>()
+        {
+            {'I',1 },
+            {'V',5 },
+            {'X',10 },
+            {'L',50 },
+            {'C',100},
+            {'M',1000},
+        };
+
         private double RomanNumeralsConverter(string romanNumeral)
         {   
             if (romanNumeral == "I") return 1;
             if (romanNumeral == "II") return 2;
             if (romanNumeral == "III") return 3;
-            if (romanNumeral == "V") return 5;
-            if (romanNumeral == "X") return 10;
-            if (romanNumeral == "L") return 50;
-            if (romanNumeral == "C") return 100;
-            if (romanNumeral == "M") return 1000;
 
-            return 0;
+            int result = 0;
+
+            for (int i = 0; i < romanNumeral.Length; i++)
+            {
+                result += romanNumeralsDictionary[romanNumeral[i]];
+            }
+
+            return result;
         }
     }
 }
