@@ -47,9 +47,8 @@ namespace RomanNumeralsKata
         {
             int result = 0;
 
-            if (romanNumeral == "IV") return 4;
-            if (romanNumeral == "IX") return 9;
-            if (romanNumeral == "XL") return 40;
+            if (romanNumeral.Length == 2 && romanNumeralsDictionary[romanNumeral[1]] > romanNumeralsDictionary[romanNumeral[0]])
+                return romanNumeralsDictionary[romanNumeral[1]] - romanNumeralsDictionary[romanNumeral[0]];
 
             for (int i = 0; i < romanNumeral.Length; i++)
             {
