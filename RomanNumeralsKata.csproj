@@ -41,15 +41,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="src\RomanNumerals.cs" />
-    <Compile Include="TestClass.cs" />
+    <Compile Include="tests\RomanNumeralsTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
     <None Include="README.MD" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="tests\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

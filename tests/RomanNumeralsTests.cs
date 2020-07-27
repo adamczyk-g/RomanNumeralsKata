@@ -39,7 +39,7 @@ namespace RomanNumeralsKata
         [TestCase("MCDXCIX", 1499)]
         [TestCase("MCMLXXXIX", 1989)]
 
-        public void RomanNumeralsConverterTest(string romanNumeral, int expectedNumber)
+        public void RomanToArabicConverterTest(string romanNumeral, int expectedNumber)
         {
             Assert.AreEqual(expectedNumber, new RomanNumerals().ConvertToArabic(romanNumeral));
         }        
